@@ -1,0 +1,293 @@
+@import "../../variables.scss";
+
+.logo{
+    width: 70px;
+    height: 70px;
+    border: 5px solid $black-cl;
+    padding: 10px;
+    @media (max-width: 479px){
+      width: 60px;
+      height: 60px;
+      border-width: 4px;
+    }
+    &__txt{
+      font-weight: 700;
+      font-size: 21px;
+      display: block;
+      line-height: 18px;
+      z-index: 2;
+      @media (max-width: 479px){
+        font-size: 16px;
+      }
+    }
+    &__line{
+      width: 80px;
+      top: 16px;
+      left: 6px;
+      animation: leftMoveStop 10s ease-in-out infinite;
+      animation-fill-mode: forwards;
+      @media (max-width: 479px){
+        top:14px;
+      }
+    }
+  }
+
+  .head-distortion{
+    @media (max-width: 1199px){
+      max-width: 465px;
+      margin: 0 auto;
+    }
+    @media (max-width: 991px) {
+      max-width: 530px;
+      margin: 40px auto -40px;
+      padding-left: 50px;
+    }
+    @media (max-width: 639px){
+      max-width: 365px;
+      margin: 40px auto -30px;
+    }
+    @media (max-width: 479px){
+      max-width: 280px;
+      margin: 40px auto -20px;
+      padding-left: 30px;
+    }
+  }
+  .multiply-line{
+    width: 350px;
+    height: 60px;
+    background: $primary-cl;
+    position: absolute;
+    top:210px;
+    left: 35px;
+    z-index: 3;
+    transform: rotate(-12deg);
+    mix-blend-mode: multiply;
+    @media (-ms-high-contrast:none){
+      opacity: .6;
+    }
+    @supports (-ms-ime-align:auto) {
+      opacity: .6;
+    }
+    animation: shake 10s ease-in-out infinite;
+    @media (max-width: 1199px) {
+      width: 280px;
+      top: 164px;
+    }
+    @media (max-width: 991px){
+        width: 280px;
+        height: 55px;
+        top: 180px;
+        left: 88px;
+    }
+    @media (max-width: 639px){
+      width: 225px;
+      height: 40px;
+      top: 114px;
+      left: 50px;
+    }
+    @media (max-width: 479px) {
+      width: 175px;
+      height: 30px;
+      top: 90px;
+      left: 17px;
+    }
+  }
+  .hero{
+    display: flex;
+    &>.wrap{
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: center;
+    }
+    &__arrow{
+      left: 0;
+      bottom: 40px;
+      width: 100%;
+      @media (max-width: 479px){
+        bottom: 25px;
+      }
+    }
+    &__row{
+      display: flex;
+      align-items: center;
+      @media (max-width: 991px) {
+        flex-direction: column-reverse;
+        padding: 50px 0 130px;
+      }
+      @media (max-width: 479px){
+        padding: 40px 0 80px;
+      }
+    }
+    &__col{
+      width: 100%;
+      @media (min-width: 992px) {
+        width: 50%;
+      }
+    }
+    &__caption{
+      text-align: center;
+      @media (min-width: 992px) {
+        text-align: left;
+        padding-top: 25%;
+        padding-left: 3%;
+      }
+    }
+    &__desc{
+      font-size: $font-size-large;
+      font-weight: 300;
+      line-height: 32px;
+      max-width: 340px;
+      @media (max-width: 991px) {
+        margin: 0 auto;
+      }
+      @media (max-width: 479px) {
+        font-size: $font-size-base;
+        line-height: 28px;
+      }
+    }
+    &__title{
+      position: relative;
+      margin: 0 -15px 15px;
+      overflow: hidden;
+      span{
+        position: relative;
+        z-index: 2;
+      }
+      .text-line{
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+  
+      .animateStart {
+        .highlight-line {
+          display: block;
+          position: absolute;
+          top: 21px;
+          width: 0;
+          @media (min-width: 480px) and (max-width: 767px) {
+            top: 17px;
+          }
+          &.from-left {
+            left: 0;
+            animation: leftFlashStop 2s ease-in-out 1 0.5s;
+            animation-fill-mode: forwards;
+          }
+          &.from-right {
+            right: 0;
+            animation: rightFlash 1s ease-in-out 1 1.2s;
+          }
+        }
+      }
+    }
+  }
+  
+  .header{
+    padding:40px 40px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    .wrap{
+      padding: 0;
+      display: flex;
+      justify-content: space-between
+    }
+    @media (max-width: 479px){
+      padding:25px 25px 0;
+    }
+  }
+  .scroll-down{
+    position: relative;
+    cursor: pointer;
+    .highlight-line{
+      width: auto;
+      height: 10px;
+      position: absolute;
+      left: -25px;
+      right: -25px;
+      top:7px;
+      z-index: 1;
+      transition:transform 0.2s ease;
+    }
+    &:hover{
+      .highlight-line{
+        transform: scaleX(0.6);
+      }
+    }
+    .img{
+      position: relative;
+      display: block;
+      z-index: 3;
+    }
+  }
+  .header .social{
+    margin: -13px -13px 0 0;
+    &__link{
+      display: block;
+      padding: 13px;
+      position: relative;
+      img{
+        vertical-align: top;
+        position: relative;
+        z-index: 2;
+      }
+      &:before{
+        content: '';
+        display: block;
+        width: 0;
+        height: 10px;
+        background: $primary-cl;
+        position: absolute;
+        right: 10px;
+        top: 22px;
+        transition: 0.2s ease-in-out;
+      }
+      &:hover:before{
+        width: 40px;
+      }
+    }
+  }
+  
+  .face-slicer{
+    @supports (-webkit-overflow-scrolling: touch) {
+      cursor: pointer;
+    }
+  }
+  .face-slice{
+    overflow: hidden;
+    will-change: transform;
+    transition: 0.3s cubic-bezier(0.68, 0.55, 0.265, 1.55);
+    img{
+      vertical-align: top;
+    }
+  }
+  
+  $elements: 6;
+  .face-slice:nth-child(1) {transform: translateX(-15px)}
+  .face-slice:nth-child(2) {transform: translate(5px,1px)}
+  .face-slice:nth-child(3) {transform: translate(25px,2px)}
+  .face-slice:nth-child(4) {transform: translate(-40px,3px);
+    @media (max-width: 479px){
+      transform: translate(-25px,3px)
+    }
+  }
+  .face-slice:nth-child(5) {transform: translate(5px,4px)}
+  .face-slice:nth-child(6) {transform: translate(-5px,5px)}
+  .head-distortion{
+    z-index: 2;
+  }
+  .head-distortion:hover .face-slice{
+    transform: translate(0px,0px) !important;
+  }
+
+  
+//   @for $i from 0 to $elements {
+//     .face-slice:nth-child(#{$i + 1}) {
+//       //animation: move 5s ease-in-out infinite $i+s;
+//       //@media(max-width: 479px){
+//       //  animation: moveMob 5s ease-in-out infinite $i+s;
+//       //}
+//     }
+//   }

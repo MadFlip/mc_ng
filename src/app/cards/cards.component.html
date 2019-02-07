@@ -1,0 +1,47 @@
+<div class="works" id="works">
+  <div class="wrap">
+    <div class="row" infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="1000"
+    (scrolled)="onScroll()">
+      <div class="col-md-4" *ngFor="let project of array">
+
+        <div class="card animated fadeInUp delay-1s">
+          <h3 class="card__title-vert upper">
+            <span class="text-inner rel">
+              <i class="highlight-line"></i>
+              <span class="rel">{{project.title}}</span>
+            </span>
+          </h3>
+          <div class="card__inner">
+            <span class="cb-l"></span>
+            <span class="cb-t"></span>
+            <span class="cb-r"></span>
+            <span class="cb-b"></span>
+            <img *ngFor="let imgItem of project.imgUrl" src="{{imgItem.small}}" srcset="{{imgItem.retina}}" alt="{{project.title}}">
+            <div class="card__desc">
+              <div>
+                <h4 class="upper">{{project.title}}</h4>
+                <p>{{project.desc}}</p>
+              </div>
+              <div>
+                <h6 class="upper">{{project.linksTitle}}</h6>
+                <a *ngFor="let listItem of project.linksList" href="{{listItem.link}}" target="_blank" class="work-link">
+                  <span>{{listItem.title}}</span>
+                </a>
+                <br *ngIf="project.linksTitle2">
+                <h6 class="upper" *ngIf="project.linksTitle2">{{project.linksTitle2}}</h6>
+                <a *ngFor="let listItem2 of project.linksList2" href="{{listItem2.link}}" target="_blank" class="work-link">
+                  <span>{{listItem2.title}}</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  
+  </div>
+</div>

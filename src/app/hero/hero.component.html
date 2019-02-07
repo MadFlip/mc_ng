@@ -1,0 +1,74 @@
+<div id="page-preloader" #pagePreloader>
+  <div class="contpre">
+    <span class="line-loader"></span>
+  </div>
+</div>
+<header class="header">
+  <div class="wrap">
+    <div class="logo rel">
+      <span class="logo__txt rel">MC</span>
+      <span class="logo__line highlight-line abs"></span>
+    </div>
+
+    <div class="social">
+      <div class="social__item">
+        <a href="https://www.linkedin.com/in/madflip/" class="social__link" target="_blank"><img src="assets/img/icon-linkedin.svg"
+            alt="linkedin"></a>
+      </div>
+      <div class="social__item">
+          <a href="https://www.facebook.com/nikolayc" class="social__link" target="_blank"><img src="assets/img/icon-fb.svg"
+              alt="facebook"></a>
+        </div>
+      <div class="social__item">
+        <a href="mailto:m.chernyshevskyi@gmail.com" class="social__link" target="_blank"><img src="assets/img/icon-email.svg"
+            alt="email"></a>
+      </div>
+      
+      <!-- <div class="social__item">
+        <a href="https://github.com/MadFlip" class="social__link" target="_blank"><img src="assets/img/icon-git.svg" alt="github"></a>
+      </div> -->
+    </div>
+  </div>
+</header>
+
+
+
+<div class="hero rel">
+  <div class="wrap">
+    <div class="hero__row">
+      <div class="hero__col">
+        <div class="hero__caption">
+          <h1 class="hero__title">
+            <span class="dinb vtop text-line" #textLine>
+              <i class="highlight-line from-left stop-visible"></i>
+              <span class="db rel">{{myName}}</span>
+            </span><br>
+            <span class="dinb vtop text-line" #textLine>
+              <i class="highlight-line from-right"></i>
+              <span class="db rel">{{mySurname}}</span>
+            </span>
+          </h1>
+          <p class="hero__desc">{{myDesc}}</p>
+        </div>
+      </div>
+      <div class="hero__col">
+        <div class="head-distortion rel">
+          <span class="multiply-line"></span>
+          <div class="face-slicer myFace" #faceSlicer>
+            <div class="face-slice" #faceSlice>
+              <img src="assets/img/face.png" srcset="assets/img/face@2x.png 2x" alt="Mykola" class="loadFace" (load)="imageReady()">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tc abs hero__arrow">
+      <div [ngx-scroll-to]="'#works'" class="scroll-down dinb vtop">
+        <span class="highlight-line"></span>
+        <span class="img">
+          <img src="assets/img/triangle.svg" class="rotating" alt="Scroll Down">
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
