@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
         imgUrl: [{ small: "assets/img/card-cryptolawyer.jpg", retina: "assets/img/card-cryptolawyer@2x.jpg 2x" }],
         linksTitle: "Website:",
         linksList: [
-            { link: "https://cryptolawyer.io", title: "cryptolawyer.io" }
+            { link: "http://cryptolawyer.nikitinteam.com", title: "cryptolawyer.io" }
         ]
     }, {
         title: "Lerevent", desc: "HTML, PHP, SCSS, JQuery, JS, Gulp, Responsive",
